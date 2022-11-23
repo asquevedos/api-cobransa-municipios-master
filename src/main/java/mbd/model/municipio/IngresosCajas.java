@@ -24,9 +24,9 @@ public class IngresosCajas {
     private String ingreferencia;
     private Double ingcobrado;
     private String ingcobradoletras;
-    private Double precision;
-    private String ingvalorletras;
     private Double ingvalor;
+    private String ingvalorletras;
+    private Double inginteres;
     private String inginteresletras;
     private Double ingrecargos;
     private String ingrecargosletras;

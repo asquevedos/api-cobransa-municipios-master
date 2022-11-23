@@ -32,7 +32,10 @@ public class CobrosDirectos {
     private Integer cbrdocumento;
     private Integer cbrimpreso;
     private String cbrvalorletras;
-    private int ingcodigo;
+
+    @ManyToOne
+    @JoinColumn(name = "ingcodigo")
+    private IngresosCajas ingcodigo;
     private String cbrubicalocal;
     private String cbrubicageografica;
     private String cbrestado;

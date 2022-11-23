@@ -41,7 +41,11 @@ public class TitulosCredito {
     private String crdresponsable;
     private String crdespecifico;
     private String crdvalorletras;
-    private int ingcodigo;
+
+    @ManyToOne
+    @JoinColumn(name = "ingcodigo")
+    private IngresosCajas ingcodigo;
+
     private int crdnumtitulo;
     private Date crdfecingreso;
     private Date crdfecverificado;
