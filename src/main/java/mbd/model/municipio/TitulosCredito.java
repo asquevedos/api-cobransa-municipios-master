@@ -1,9 +1,13 @@
 package mbd.model.municipio;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
+
+
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "tituloscredito")
@@ -15,7 +19,6 @@ import java.util.Date;
 public class TitulosCredito {
     @Id
     private String crdcodigo;
-
     private String crdsecundario;
     private int crdanio;
     private int crdmes;
@@ -44,6 +47,7 @@ public class TitulosCredito {
 
     @ManyToOne
     @JoinColumn(name = "ingcodigo")
+    @JsonBackReference
     private IngresosCajas ingcodigo;
 
     private int crdnumtitulo;
@@ -57,4 +61,11 @@ public class TitulosCredito {
     private String cedulant;
     private Date crdfechacoactiva;
     private int crdcoactiva;
+
+    @Transient
+    private Double valorConNoRembolsable;
+
+    @Transient
+    private List<Descuento> descuentosAplicados;
+
 }

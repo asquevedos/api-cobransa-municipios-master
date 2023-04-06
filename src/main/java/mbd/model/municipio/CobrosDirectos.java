@@ -1,7 +1,8 @@
 package mbd.model.municipio;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.util.Date;
 
@@ -25,6 +26,7 @@ public class CobrosDirectos {
 
     @ManyToOne
     @JoinColumn(name = "cbrcontribuyente")
+    @JsonIgnoreProperties(value={"contribuyente", "hibernateLazyInitializer", "handler"}, allowSetters=true)
     private Contribuyente cbrcontribuyente;
     private String cbrdepartamento;
     private String cbrusuario;
@@ -33,9 +35,13 @@ public class CobrosDirectos {
     private Integer cbrimpreso;
     private String cbrvalorletras;
 
+
     @ManyToOne
     @JoinColumn(name = "ingcodigo")
+    @JsonBackReference
     private IngresosCajas ingcodigo;
+
+
     private String cbrubicalocal;
     private String cbrubicageografica;
     private String cbrestado;
