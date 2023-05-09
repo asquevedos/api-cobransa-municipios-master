@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface InteresesRepository extends JpaRepository<Intereses, Integer> {
 
-    @Query("SELECT i FROM Intereses i WHERE i.anio = :anio AND i.mes = :mes")
+    @Query("SELECT i FROM Intereses i WHERE i.anio = :anio+1 AND i.mes = :mes")
     Intereses findInteresesBy(@Param("anio") Integer anio, @Param("mes") Integer mes);
 
     @Query("SELECT SUM(i.interes) FROM Intereses i WHERE i.secuencia >= :secuencia")

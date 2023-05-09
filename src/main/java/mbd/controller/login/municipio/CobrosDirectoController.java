@@ -41,7 +41,7 @@ public class CobrosDirectoController {
     }
 
     @PostMapping("/cobros_directo/{cbrsecuencia}")
-    public ResponseEntity<?> saveCliente(@RequestBody Integer cbrsecuencia, BindingResult result) {
+    public ResponseEntity<?> saveCobroDirecto(@RequestBody Integer cbrsecuencia, BindingResult result) {
         //aparentemente esto me saca el nombre del usuario logeado
         SecurityContext securityContext = SecurityContextHolder.getContext();
         String usuario = securityContext.getAuthentication().getName();

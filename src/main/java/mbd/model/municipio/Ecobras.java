@@ -22,10 +22,9 @@ public class Ecobras {
     private Double ecvalnr;
 
     public double generatePorcentajeDescuento() {
-        double porcentajeDescuento = ecvalobr * 100 / (ecvalobr + ecvalnr);
 
-
-        return ecvalobr * 100 / (ecvalobr + ecvalnr);
+        return (ecvalnr*100)/(ecvalobr + ecvalnr);
+        //return ecvalobr * 100 / (ecvalobr + ecvalnr);
     }
 
 }
